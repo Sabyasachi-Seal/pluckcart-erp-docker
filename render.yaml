@@ -2,29 +2,8 @@
 
 services:
   - type: web
-    name: pluckcart-erp
-    runtime: docker 
+    name: pluckcart
+    runtime: docker
     rootDir: .
-    envVars:
-      - key: KEY1
-        value: value1
-      - key: KEY2
-        value: value2
-    dockerfile: |
-      # Specify the base Docker image
-      FROM docker:latest
-
-      # Set the working directory
-      WORKDIR /app
-
-      # Copy your Docker Compose file to the working directory
-      COPY ./pwd.yml /app/
-
-      # Install any additional dependencies if needed
-      # ...
-
-      # Expose the necessary ports
-      EXPOSE 3000
-
-      # Run the Docker Compose command
-      CMD ["docker-compose", "-f", "./pwd.yml", "up"]
+    dockerCommand: ./webdis.sh # optional (defaults to Dockerfile command)
+    healthCheckPath: /
