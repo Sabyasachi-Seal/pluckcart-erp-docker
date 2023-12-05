@@ -1,7 +1,10 @@
 # render.yml
 
 services:
-  - name: pluckcart-erp
+  - type: web
+    name: pluckcart-erp
+    runtime: docker 
+    rootDir: .
     envVars:
       - key: KEY1
         value: value1
@@ -21,7 +24,7 @@ services:
       # ...
 
       # Expose the necessary ports
-      EXPOSE <your-port>
+      EXPOSE 3000
 
       # Run the Docker Compose command
       CMD ["docker-compose", "-f", "./pwd.yml", "up"]
