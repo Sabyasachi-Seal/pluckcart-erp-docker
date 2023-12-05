@@ -2,7 +2,7 @@
 FROM docker
 
 # Copy the shell script from your host to the present location (.) in your image
-COPY pluckcart.sh .
+COPY . .
 
 # Make the shell script executable
 RUN chmod +x pluckcart.sh
